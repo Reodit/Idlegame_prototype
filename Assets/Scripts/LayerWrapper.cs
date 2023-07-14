@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LayerWrapper : MonoBehaviour
 {
-    public Renderer[] layers;  // 무한 스크롤링을 적용할 레이어들의 Renderer 배열
-    public float[] speed;  // 각 레이어의 스크롤 속도
+    public Renderer[] layers;
+    public float[] speed;
 
-    private Vector2[] _initialOffset;  // 각 레이어의 초기 offset 값
-    public Transform targetTransform;  // 움직임을 기준으로 삼을 Transform
-
+    public float layerWrapperSpeed;
+    private Vector2[] _initialOffset;
+    private ParallaxTest _parallaxTest;
     private void Awake()
     {
         _initialOffset = new Vector2[layers.Length];
@@ -17,22 +15,17 @@ public class LayerWrapper : MonoBehaviour
         {
             _initialOffset[i] = layers[i].sharedMaterial.GetTextureOffset("_MainTex");
         }
+
+        _parallaxTest = FindObjectOfType<ParallaxTest>();
     }
     
     private void Update()
     {
-        if (targetTransform == null)
-        {
-            return;
-        }
-
         for (int i = 0; i < layers.Length; i++)
         {
-            Vector3 targetMovement = targetTransform.position - layers[i].transform.position;
-            float offset = targetMovement.x * speed[i];
-
-            Vector2 newOffset = _initialOffset[i] + new Vector2(offset, 0f);
-            layers[i].sharedMaterial.SetTextureOffset("_MainTex", newOffset);
+            float offset = _parallaxTest.GetInputXValue() * speed[i] * Time.deltaTime;
+            _initialOffset[i] += new Vector2(offset, 0f);
+            layers[i].sharedMaterial.SetTextureOffset("_MainTex", _initialOffset[i]);
         }
     }
 
