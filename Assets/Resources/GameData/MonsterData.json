@@ -1,0 +1,25 @@
+{
+   "data":[
+      {
+         "id":0,
+         "prefabName":"Ghost",
+         "monsterName":"Ghost",
+         "maxHp":5,
+         "rewardGold": 10
+      },
+      {
+         "id":1,
+         "prefabName":"Ghost2",
+         "monsterName":"Ghost2",
+         "maxHp":40,
+         "rewardGold": 10
+      },
+      {
+         "id":3,
+         "prefabName":"Ghost",
+         "monsterName":"Ghost",
+         "maxHp":40,
+         "rewardGold": 10
+      }
+   ]
+}

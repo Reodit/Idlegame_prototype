@@ -1,0 +1,16 @@
+{
+   "data":[
+      {
+         "id":0,
+         "skillName":"Default_Attack",
+         "cooldownDuration":1,
+         "skillDamage": 1
+      },
+      {
+         "id":1,
+         "skillName":"Slash",
+         "cooldownDuration":2,
+         "skillDamage": 2
+      }
+   ]
+}

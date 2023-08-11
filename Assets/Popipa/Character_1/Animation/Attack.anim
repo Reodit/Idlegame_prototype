@@ -155,4 +155,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.5
+    functionName: PopiAttack
+    data: 
+    objectReferenceParameter: {fileID: 3957064112005008361, guid: e423bfa6618ecb244a50f32881346436, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

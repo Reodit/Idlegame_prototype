@@ -1,22 +1,8 @@
 using UnityEngine;
-using System.Collections;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(BoxCollider2D))]
 public class Player1Controller : MonoBehaviour
 {
-
 	public Animator anim;
-
-	// Controls facing direction
-	public bool facingRight;
-
-	// Use this for initialization
-	void Start()
-	{
-		Run();
-	}
-	 
 	public void Jump()
     {
 		anim.SetBool("Jump", true) ;
@@ -47,7 +33,7 @@ public class Player1Controller : MonoBehaviour
 	}
 	public void Run()
 	{
-		anim.SetBool("Run" , true);
+		anim.SetTrigger("Run");
 	}
 	public void RunOff()
 	{
@@ -55,28 +41,12 @@ public class Player1Controller : MonoBehaviour
 	}
 	public void Attack()
 	{
-		anim.SetBool("Attack" , true);
+		anim.SetTrigger("Attack");
 	}
 	public void AttackOff()
 	{
 		anim.SetBool("Attack", false);
 	}
-
-
-
-
-
-	void Update()
-	{
-
-
-		
-
-
-
-	} 
-
-
 }
 
 

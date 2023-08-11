@@ -7,7 +7,7 @@ public class LayerWrapper : MonoBehaviour
 
     public float layerWrapperSpeed;
     private Vector2[] _initialOffset;
-    private ParallaxTest _parallaxTest;
+    
     private void Awake()
     {
         _initialOffset = new Vector2[layers.Length];
@@ -15,15 +15,13 @@ public class LayerWrapper : MonoBehaviour
         {
             _initialOffset[i] = layers[i].sharedMaterial.GetTextureOffset("_MainTex");
         }
-
-        _parallaxTest = FindObjectOfType<ParallaxTest>();
     }
     
-    private void Update()
+    public void OffsetUpdate()
     {
         for (int i = 0; i < layers.Length; i++)
         {
-            float offset = _parallaxTest.GetInputXValue() * speed[i] * Time.deltaTime;
+            float offset = speed[i] * Time.deltaTime;
             _initialOffset[i] += new Vector2(offset, 0f);
             layers[i].sharedMaterial.SetTextureOffset("_MainTex", _initialOffset[i]);
         }

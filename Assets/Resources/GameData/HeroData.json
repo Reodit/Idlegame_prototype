@@ -1,0 +1,88 @@
+{
+   "data":[
+      {
+         "id":0,
+         "heroName":"Popi0",
+         "hp":"10",
+         "mp":"20",
+         "skills":[
+            {
+               "id":0,
+               "skillName":"Default_Attack",
+               "cooldownDuration":0.5,
+               "skillDamage": 1
+            },
+            {
+               "id":1,
+               "skillName":"Slash",
+               "cooldownDuration":2,
+               "skillDamage": 2
+            }
+         ],
+         "prefabName":"Popi"
+      },
+      {
+         "id":1,
+         "heroName":"Popi1",
+         "hp":"10",
+         "mp":"20",
+         "skills":[
+            {
+               "id":0,
+               "skillName":"Default_Attack",
+               "cooldownDuration":3,
+               "skillDamage": 1
+            },
+            {
+               "id":1,
+               "skillName":"Slash",
+               "cooldownDuration":2,
+               "skillDamage": 2
+            }
+         ],
+         "prefabName":"Popi"
+      },
+      {
+         "id":2,
+         "heroName":"Popi2",
+         "hp":"10",
+         "mp":"20",
+         "skills":[
+            {
+               "id":0,
+               "skillName":"Default_Attack",
+               "cooldownDuration":4,
+               "skillDamage": 1
+            },
+            {
+               "id":1,
+               "skillName":"Slash",
+               "cooldownDuration":2,
+               "skillDamage": 2
+            }
+         ],
+         "prefabName":"Popi"
+      },
+      {
+         "id":3,
+         "heroName":"Popi3",
+         "hp":"10",
+         "mp":"20",
+         "skills":[
+            {
+               "id":0,
+               "skillName":"Default_Attack",
+               "cooldownDuration":7,
+               "skillDamage": 1
+            },
+            {
+               "id":1,
+               "skillName":"Slash",
+               "cooldownDuration":2,
+               "skillDamage": 2
+            }
+         ],
+         "prefabName":"Popi"
+      }
+   ]
+}
