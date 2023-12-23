@@ -4,13 +4,15 @@
          "id":0,
          "skillName":"Default_Attack",
          "cooldownDuration":1,
-         "skillDamage": 1
+         "skillDamage": 1,
+         "hitCount": 4
       },
       {
          "id":1,
          "skillName":"Slash",
          "cooldownDuration":2,
-         "skillDamage": 2
+         "skillDamage": 2,
+         "hitCount": 4
       }
    ]
 }

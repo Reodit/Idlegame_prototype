@@ -90,7 +90,7 @@ namespace FSM.States
         public bool RequiresUpdate { get; set; }
 
         private float timeElapsed = 0f;
-        private float delay = 0.5f; // 예: 5초 지연
+        private float delay = 0.5f; 
         private bool hasDelayedFunctionExecuted = false;
         
         public MonsterDie(string stateName, bool requiresUpdate)

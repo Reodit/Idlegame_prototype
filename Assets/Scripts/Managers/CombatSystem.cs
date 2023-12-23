@@ -11,6 +11,7 @@ namespace Managers
     public static class CombatSystemClient
     {
         public static Monster ms;
+        public static List<int> Damages = new List<int>();
         public static void OnDamageCalculatedDataReceived(int data)
         {
             Debug.Log($"Enemy's remain Hp is {data}");
@@ -23,7 +24,16 @@ namespace Managers
 
         public static void Attack(Hero hero)
         {
-            ms.currentHp -= hero.heroData.skills[0].skillDamage;
+            // 순서 정하기
+            // 데미지 계산 ==> 이펙트 ==> 애니메이션 ==> 골드 드롭 애니메이션
+            
+            // TODO SKillData에 타격 수 데이터 추가
+            for (int i = 0; i < hero.heroData.skills[0].hitCount; i++)
+            {
+                Damages.Add(hero.heroData.skills[0].skillDamage);
+            }
+            
+            ms.HpVerifyToServer(Damages);
             ms.StateMachine.SetTrigger("Damaged");
             if (ms.currentHp <= 0)
             {
@@ -33,6 +43,7 @@ namespace Managers
                 GameManager.Instance.ChangesUserGold(ms);
             }
             
+            Damages.Clear();
         }
     }
 

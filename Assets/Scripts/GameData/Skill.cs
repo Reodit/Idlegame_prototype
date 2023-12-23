@@ -7,6 +7,7 @@ public class Skill
     public string skillName;
     public float cooldownDuration;
     public int skillDamage;
+    public int hitCount;
 
     public Skill(Skill _skill)
     {
@@ -14,5 +15,6 @@ public class Skill
         skillName = _skill.skillName;
         cooldownDuration = _skill.cooldownDuration;
         skillDamage = _skill.skillDamage;
+        hitCount = _skill.hitCount;
     }
 }

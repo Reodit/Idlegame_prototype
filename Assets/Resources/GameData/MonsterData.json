@@ -4,7 +4,7 @@
          "id":0,
          "prefabName":"Ghost",
          "monsterName":"Ghost",
-         "maxHp":5,
+         "maxHp":100000000,
          "rewardGold": 10
       },
       {
